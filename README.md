@@ -29,3 +29,16 @@
 3. [gulp-concat](https://www.npmjs.com/package/gulp-concat) — Для конкатенации нескольких файлов в один.
 4. [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) — Для минификации CSS файлов.
 5. [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) — Для минификации JS файлов.
+6. [stylelint](https://www.npmjs.com/package/stylelint) — Линтинг CSS кода.
+7. [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) — Набор правил для Stylelint.
+8. [eslint](https://www.npmjs.com/package/eslint) — Линтинг JS кода.
+9. [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base) — Набор правил для ESLint.
+10. [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) — Зависимость,
+которую необходимо установить для работы **eslint-config-airbnb-base**.
+11. [husky](https://www.npmjs.com/package/husky) — Настройка git хуков.
+Позволяет автоматически запустить все линтеры перед выполнением команды `git commit`.
+Это помогает соблюдать чистоту кода и не пропускать ошибки в репозиторий проекта.
+Более того, если запускать линтеры с ключом --fix то они попытаются исправить все найденные ошибки автоматически.
+12. [lint-staged](https://www.npmjs.com/package/lint-staged) — Дополнение к **husky**.
+Отвечает за запуск необходимых линтеров с указанием паттерна по которому будет определяться какой линтер для какого файла запускать.
+
