@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Implementation of Yandex SHRI 2020 design system for task 1",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "gulp",
+    "lint:js": "eslint src/**",
+    "lint:css": "stylelint src/**"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/michailRemmele/shri-2020-task-1.git"
