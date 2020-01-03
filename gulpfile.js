@@ -1,10 +1,10 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var cleanCSS = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
-var del = require('del');
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const del = require('del');
 
-var path = {
+const path = {
   css: './src/**/*.css',
   js: './src/**/*.js',
   build: './build/',

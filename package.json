@@ -16,9 +16,31 @@
   "homepage": "https://github.com/michailRemmele/shri-2020-task-1#readme",
   "devDependencies": {
     "del": "^5.1.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "stylelint": "^12.0.1",
+    "stylelint-config-standard": "^19.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --max-warnings=0 --fix",
+      "git add"
+    ],
+    "src/**/*.css": [
+      "stylelint --max-warnings=0 --fix",
+      "git add"
+    ]
   }
 }
