@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
-const del = require('del');
 const argv = require('yargs').argv;
 
 const path = {
@@ -13,10 +12,6 @@ const path = {
 };
 
 const dest = argv.dest ? argv.dest : path.build;
-
-function clean() {
-  return del([dest]);
-}
 
 function styles() {
   return gulp.src(path.css)
@@ -37,5 +32,5 @@ function watch() {
   gulp.watch(path.js, scripts);
 }
 
-exports.build = gulp.series(clean, gulp.parallel(styles, scripts));
-exports.default = gulp.series(clean, gulp.parallel(styles, scripts), watch);
+exports.build = gulp.parallel(styles, scripts);
+exports.default = gulp.series(gulp.parallel(styles, scripts), watch);
