@@ -35,7 +35,7 @@ $ npm run build [-- --dest={path-to-build-folder}]
 Поскольку задание предполагает на выходе только два файла (script.js и style.css), где будет содержаться результат работы, то для автоматизации сборки бандла требуется  соответствующий инструмент. К примеру Gulp.
 2. [gulp-concat](https://www.npmjs.com/package/gulp-concat) — Для конкатенации нескольких файлов в один.
 3. [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) — Для минификации CSS файлов.
-4. [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) — Для минификации JS файлов.
+4. [gulp-uglify-es](https://www.npmjs.com/package/gulp-uglify-es) — Для минификации JS файлов.
 5. [stylelint](https://www.npmjs.com/package/stylelint) — Линтинг CSS кода.
 6. [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) — Набор правил для Stylelint.
 7. [eslint](https://www.npmjs.com/package/eslint) — Линтинг JS кода.
