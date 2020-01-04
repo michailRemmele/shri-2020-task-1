@@ -4,7 +4,8 @@
   "description": "Implementation of Yandex SHRI 2020 design system for task 1",
   "main": "index.js",
   "scripts": {
-    "build": "gulp",
+    "start": "gulp",
+    "build": "gulp build",
     "lint:js": "eslint src/**",
     "lint:css": "stylelint src/**"
   },
@@ -30,7 +31,8 @@
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "stylelint": "^12.0.1",
-    "stylelint-config-standard": "^19.0.0"
+    "stylelint-config-standard": "^19.0.0",
+    "yargs": "^15.1.0"
   },
   "husky": {
     "hooks": {
