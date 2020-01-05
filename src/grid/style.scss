@@ -4,13 +4,14 @@
   --gap-two-thirds: calc(2 / 3 * var(--gap));
 }
 
-.grid_m-columns_12 {
-  --column-width: calc(var(--screen-m) / 12);
+@mixin grid_m-columns($size) {
+  .grid_m-columns_#{$size} {
+    --column-width: calc(var(--screen-m) / #{$size});
+  }
 }
 
-.grid_m-columns_10 {
-  --column-width: calc(var(--screen-m) / 10);
-}
+@include grid_m-columns(12);
+@include grid_m-columns(10);
 
 .grid_col-gap_two-thirds {
   padding-left: var(--gap-two-thirds);
@@ -37,22 +38,14 @@
   padding-bottom: var(--gap);
 }
 
-.grid__fraction_m-col_2 {
-  width: calc(2 * var(--column-width));
+@mixin fraction_m-col($size) {
+  .grid__fraction_m-col_#{$size} {
+    width: calc(#{$size} * var(--column-width));
+  }
 }
 
-.grid__fraction_m-col_3 {
-  width: calc(3 * var(--column-width));
-}
+$sizes: 2, 3, 4, 5, 8;
 
-.grid__fraction_m-col_4 {
-  width: calc(4 * var(--column-width));
-}
-
-.grid__fraction_m-col_5 {
-  width: calc(5 * var(--column-width));
-}
-
-.grid__fraction_m-col_8 {
-  width: calc(8 * var(--column-width));
+@each $size in $sizes {
+  @include fraction_m-col($size);
 }

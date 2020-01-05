@@ -1,3 +1,9 @@
+@mixin element-space-a($element-name, $space) {
+  .card__#{$element-name}_space-a_#{$space} {
+    padding: var(--space-#{$space});
+  }
+}
+
 .card {
   position: relative;
 }
@@ -23,24 +29,10 @@
   align-items: center;
 }
 
-.card__content_space-a_m {
-  padding: var(--space-m);
-}
+$content-spaces: m, l, xl, xxl, xxxl;
 
-.card__content_space-a_xl {
-  padding: var(--space-xl);
-}
-
-.card__content_space-a_l {
-  padding: var(--space-l);
-}
-
-.card__content_space-a_xxl {
-  padding: var(--space-xxl);
-}
-
-.card__content_space-a_xxxl {
-  padding: var(--space-xxxl);
+@each $space in $content-spaces {
+  @include element-space-a(content, $space);
 }
 
 .card__footer {
@@ -73,18 +65,8 @@
   align-items: flex-end;
 }
 
-.card__footer_space-a_m {
-  padding: var(--space-m);
-}
+$footer-spaces: m, l, xl, xxl;
 
-.card__footer_space-a_l {
-  padding: var(--space-l);
-}
-
-.card__footer_space-a_xl {
-  padding: var(--space-xl);
-}
-
-.card__footer_space-a_xxl {
-  padding: var(--space-xxl);
+@each $space in $footer-spaces {
+  @include element-space-a(footer, $space);
 }
