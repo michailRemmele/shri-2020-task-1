@@ -1,0 +1,58 @@
+.grid {
+  --screen-m: 1024px;
+  --gap-half: calc(var(--gap) / 2);
+  --gap-two-thirds: calc(2 / 3 * var(--gap));
+}
+
+.grid_m-columns_12 {
+  --column-width: calc(var(--screen-m) / 12);
+}
+
+.grid_m-columns_10 {
+  --column-width: calc(var(--screen-m) / 10);
+}
+
+.grid_col-gap_two-thirds {
+  padding-left: var(--gap-two-thirds);
+  padding-right: var(--gap-two-thirds);
+}
+
+.grid_col-gap_full {
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+}
+
+.grid_col-gap_half {
+  padding-left: var(--gap-half);
+  padding-right: var(--gap-half);
+}
+
+.grid_row-gap_half {
+  padding-top: var(--gap-half);
+  padding-bottom: var(--gap-half);
+}
+
+.grid_row-gap_full {
+  padding-top: var(--gap);
+  padding-bottom: var(--gap);
+}
+
+.grid__fraction_m-col_2 {
+  width: calc(2 * var(--column-width));
+}
+
+.grid__fraction_m-col_3 {
+  width: calc(3 * var(--column-width));
+}
+
+.grid__fraction_m-col_4 {
+  width: calc(4 * var(--column-width));
+}
+
+.grid__fraction_m-col_5 {
+  width: calc(5 * var(--column-width));
+}
+
+.grid__fraction_m-col_8 {
+  width: calc(8 * var(--column-width));
+}
