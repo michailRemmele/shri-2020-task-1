@@ -1,12 +1,12 @@
-.text {
-  display: flex;
-}
-
 .text_align_center {
-  justify-content: center;
+  text-align: center;
 }
 
 @mixin text-size($size) {
+  .text_size_#{$size} {
+    line-height: var(--line-height-#{$size});
+  }
+
   .text_size_#{$size} .text__word {
     height: var(--text-height-#{$size});
   }
@@ -62,4 +62,8 @@ $word-widths: (
   @each $text-size in $text-sizes {
     @include word-width($key, $text-size);
   }
+}
+
+.text__word {
+  display: inline-block;
 }
