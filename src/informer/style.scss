@@ -1,0 +1,42 @@
+.informer_border_all {
+  border: 3px solid var(--background-color-border);
+}
+
+.informer_view_default {
+  background-color: var(--background-color-default);
+}
+
+.informer__content,
+.informer__action {
+  display: flex;
+}
+
+.informer__content_distribute_default,
+.informer__action_distribute_default {
+  justify-content: flex-start;
+}
+
+.informer__content_distribute_between,
+.informer__action_distribute_between {
+  justify-content: space-between;
+}
+
+.informer__content_distribute_center,
+.informer__action_distribute_center {
+  justify-content: center;
+}
+
+@mixin element-space-a($element-name, $space) {
+  .informer__#{$element-name}_space-a_#{$space} {
+    padding: var(--space-#{$space});
+  }
+}
+
+$elements: content, action;
+$spaces: xl, xxl;
+
+@each $element in $elements {
+  @each $space in $spaces {
+    @include element-space-a($element, $space);
+  }
+}
