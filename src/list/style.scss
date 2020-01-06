@@ -1,0 +1,62 @@
+.list_border_all {
+  border: 3px solid var(--background-color-border);
+}
+
+.list_view_default {
+  background-color: var(--background-color-default);
+}
+
+.list__item {
+  display: flex;
+}
+
+.list__item_border_bottom {
+  border-bottom: 3px solid var(--background-color-border);
+}
+
+.list__item_border_top {
+  border-top: 3px solid var(--background-color-border);
+}
+
+.list__item_distribute_between {
+  justify-content: space-between;
+}
+
+.list__item_vertical-align_center {
+  align-items: center;
+}
+
+@mixin indent-t($space) {
+  .list__item_indent-t_#{$space} {
+    margin-top: var(--space-#{$space});
+  }
+}
+
+@include indent-t(m);
+
+@mixin indent-b($space) {
+  .list__item_indent-b_#{$space} {
+    margin-bottom: var(--space-#{$space});
+  }
+}
+
+@include indent-b(s);
+@include indent-b(m);
+@include indent-b(l);
+@include indent-b(xl);
+
+@mixin space-b($space) {
+  .list__item_space-b_#{$space} {
+    padding-bottom: var(--space-#{$space});
+  }
+}
+
+@include space-b(s);
+
+@mixin space-a($space) {
+  .list__item_space-a_#{$space} {
+    padding: var(--space-#{$space});
+  }
+}
+
+@include space-a(m);
