@@ -1,3 +1,5 @@
+@import '../../helpers/spaces/style';
+
 .informer_border_all {
   border: 3px solid var(--background-color-border);
 }
@@ -26,17 +28,11 @@
   justify-content: center;
 }
 
-@mixin element-space-a($element-name, $space) {
-  .informer__#{$element-name}_space-a_#{$space} {
-    padding: var(--space-#{$space});
-  }
-}
-
 $elements: content, action;
-$spaces: xl, xxl;
+$values: xl, xxl;
 
 @each $element in $elements {
-  @each $space in $spaces {
-    @include element-space-a($element, $space);
+  @each $value in $values {
+    @include space-a(informer__#{$element}, $value);
   }
 }

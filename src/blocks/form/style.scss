@@ -1,0 +1,41 @@
+@import '../../helpers/spaces/style';
+
+.form_border_all {
+  border: 3px solid var(--background-color-border);
+}
+
+.form_view_default {
+  background-color: var(--background-color-default);
+}
+
+.form__item {
+  display: flex;
+}
+
+.form__item_border_bottom {
+  border-bottom: 3px solid var(--background-color-border);
+}
+
+.form__item_border_bottom:last-child {
+  border: none;
+}
+
+.form__item_distribute_between {
+  justify-content: space-between;
+}
+
+.form__item_vertical-align_center {
+  align-items: center;
+}
+
+$values: xxxs, xxs, s, m, l, xl, xxl, xxxl, xxxxl;
+
+@each $value in $values {
+  @include indent-b(form__item, $value);
+  @include space-h(form__item, $value);
+  @include space-v(form__item, $value);
+}
+
+.form__label_width_default {
+  width: 35%;
+}

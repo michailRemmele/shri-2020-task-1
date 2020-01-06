@@ -1,0 +1,26 @@
+@import '../../helpers/spaces/style';
+
+.layout {
+  display: flex;
+}
+
+.layout__container {
+  display: flex;
+}
+
+.layout__container_align_center {
+  justify-content: center;
+}
+
+.layout__container_size_s {
+  width: 920px;
+}
+
+.layout__container_size_m {
+  width: 1280px;
+}
+
+@include space-v(layout__container, xxxxl);
+@include space-v(layout__container, xxxxxl);
+@include indent-b(layout__container, xxl);
+@include indent-b(layout__container, xxxxl);

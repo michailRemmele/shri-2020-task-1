@@ -1,8 +1,4 @@
-@mixin element-space-a($element-name, $space) {
-  .card__#{$element-name}_space-a_#{$space} {
-    padding: var(--space-#{$space});
-  }
-}
+@import '../../helpers/spaces/style';
 
 .card {
   position: relative;
@@ -29,10 +25,10 @@
   align-items: center;
 }
 
-$content-spaces: m, l, xl, xxl, xxxl;
+$content-space-values: m, l, xl, xxl, xxxl;
 
-@each $space in $content-spaces {
-  @include element-space-a(content, $space);
+@each $value in $content-space-values {
+  @include space-a(card__content, $value);
 }
 
 .card__footer {
@@ -65,8 +61,8 @@ $content-spaces: m, l, xl, xxl, xxxl;
   align-items: flex-end;
 }
 
-$footer-spaces: m, l, xl, xxl;
+$footer-space-values: m, l, xl, xxl;
 
-@each $space in $footer-spaces {
-  @include element-space-a(footer, $space);
+@each $value in $footer-space-values {
+  @include space-a(card__footer, $value);
 }
