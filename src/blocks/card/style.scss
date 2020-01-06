@@ -15,6 +15,7 @@
 .card__content {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card__content_distribute_center {
@@ -35,6 +36,7 @@ $content-space-values: m, l, xl, xxl, xxxl;
   position: absolute;
   bottom: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card__footer_distribute_between {

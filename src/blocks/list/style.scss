@@ -10,6 +10,7 @@
 
 .list__item {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .list__item_border_bottom {

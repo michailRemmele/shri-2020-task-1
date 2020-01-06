@@ -11,6 +11,7 @@
 .informer__content,
 .informer__action {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .informer__content_distribute_default,
