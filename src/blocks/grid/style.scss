@@ -1,55 +1,43 @@
 .grid {
-  --screen-m: 1024px;
   --gap-half: calc(var(--gap) / 2);
   --gap-two-thirds: calc(2 / 3 * var(--gap));
 
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  width: 100%;
 }
 
 @mixin grid_m-columns($size) {
   .grid_m-columns_#{$size} {
-    --column-width: calc(var(--screen-m) / #{$size});
+    grid-template-columns: repeat($size, 1fr);
   }
 }
 
 @include grid_m-columns(12);
 @include grid_m-columns(10);
 
-.grid_col-gap_two-thirds .grid__fraction {
-  margin-right: var(--gap-two-thirds);
+.grid_col-gap_two-thirds {
+  grid-column-gap: var(--gap-two-thirds);
 }
 
-.grid_col-gap_full .grid__fraction {
-  margin-right: var(--gap);
+.grid_col-gap_full {
+  grid-column-gap: var(--gap);
 }
 
-.grid_col-gap_half .grid__fraction {
-  margin-right: var(--gap-half);
+.grid_col-gap_half {
+  grid-column-gap: var(--gap-half);
 }
 
-.grid_row-gap_half .grid__fraction {
-  margin-bottom: var(--gap-half);
+.grid_row-gap_half {
+  grid-row-gap: var(--gap-half);
 }
 
-.grid_row-gap_full .grid__fraction {
-  margin-bottom: var(--gap);
-}
-
-.grid_col-gap_two-thirds .grid__fraction:last-child,
-.grid_col-gap_full .grid__fraction:last-child,
-.grid_col-gap_half .grid__fraction:last-child {
-  margin-right: 0;
-}
-
-.grid_row-gap_half .grid__fraction:last-child,
-.grid_row-gap_full .grid__fraction:last-child {
-  margin-bottom: 0;
+.grid_row-gap_full {
+  grid-row-gap: var(--gap);
 }
 
 @mixin fraction_m-col($size) {
   .grid__fraction_m-col_#{$size} {
-    width: calc(#{$size} * var(--column-width));
+    grid-column-end: span $size;
   }
 }
 
