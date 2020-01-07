@@ -7,18 +7,19 @@
 
 .layout__container {
   display: flex;
+  width: 100%;
 }
 
 .layout__container_align_center {
-  justify-content: center;
+  align-self: center;
 }
 
 .layout__container_size_s {
-  width: 920px;
+  max-width: 920px;
 }
 
 .layout__container_size_m {
-  width: 1280px;
+  max-width: 1280px;
 }
 
 @include space-v(layout__container, xxxxl);
