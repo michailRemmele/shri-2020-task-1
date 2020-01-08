@@ -1,0 +1,26 @@
+.button {
+  background-color: var(--background-color-primary);
+}
+
+@mixin button-size($key, $value) {
+  .button_size_#{$key} {
+    width: 200px;
+    height: $value;
+  }
+}
+
+$sizes: (
+  s: 24px,
+  m: 32px,
+  l: 42px,
+  xl: 56px,
+  xxl: 64px,
+);
+
+@each $key, $value in $sizes {
+  @include button-size($key, $value);
+}
+
+.button_width_full {
+  width: 100%;
+}

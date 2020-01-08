@@ -1,0 +1,22 @@
+.input {
+  width: 100%;
+  border: 3px solid var(--background-color-border);
+}
+
+@mixin input-size($key, $value) {
+  .input_size_#{$key} {
+    height: $value;
+  }
+}
+
+$sizes: (
+  s: 24px,
+  m: 32px,
+  l: 42px,
+  xl: 56px,
+  xxl: 64px,
+);
+
+@each $key, $value in $sizes {
+  @include input-size($key, $value);
+}

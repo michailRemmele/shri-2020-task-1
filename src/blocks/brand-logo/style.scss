@@ -1,0 +1,34 @@
+$names: (
+  blue: #5dcdf9,
+  green: #23b324,
+  red: #f33,
+  purple: #c62cff,
+);
+$sizes: (
+  xxs: 24px,
+  xs: 32px,
+  s: 40px,
+  m: 60px,
+  l: 80px,
+);
+
+@mixin brand-logo-name($key, $value) {
+  .brand-logo_name_#{$key} {
+    background-color: $value;
+  }
+}
+
+@mixin brand-logo-size($key, $value) {
+  .brand-logo_size_#{$key} {
+    width: $value;
+    height: $value;
+  }
+}
+
+@each $key, $value in $names {
+  @include brand-logo-name($key, $value);
+}
+
+@each $key, $value in $sizes {
+  @include brand-logo-size($key, $value);
+}

@@ -1,0 +1,58 @@
+.grid {
+  --gap-half: calc(var(--gap) / 2);
+  --gap-two-thirds: calc(2 / 3 * var(--gap));
+
+  display: grid;
+  width: 100%;
+}
+
+@mixin grid_m-columns($size) {
+  .grid_m-columns_#{$size} {
+    grid-template-columns: repeat($size, 1fr);
+  }
+}
+
+@include grid_m-columns(12);
+@include grid_m-columns(10);
+
+.grid_col-gap_two-thirds {
+  grid-column-gap: var(--gap-two-thirds);
+}
+
+.grid_col-gap_full {
+  grid-column-gap: var(--gap);
+}
+
+.grid_col-gap_half {
+  grid-column-gap: var(--gap-half);
+}
+
+.grid_row-gap_half {
+  grid-row-gap: var(--gap-half);
+}
+
+.grid_row-gap_full {
+  grid-row-gap: var(--gap);
+}
+
+@mixin fraction_m-col($size) {
+  .grid__fraction_m-col_#{$size} {
+    grid-column-end: span $size;
+  }
+}
+
+$sizes: 2, 3, 4, 5, 8;
+
+@each $size in $sizes {
+  @include fraction_m-col($size);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid__fraction {
+    grid-column-end: span 1;
+  }
+}

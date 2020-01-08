@@ -1,0 +1,39 @@
+@import '../../helpers/spaces/style';
+
+.informer_border_all {
+  border: 3px solid var(--background-color-border);
+}
+
+.informer_view_default {
+  background-color: var(--background-color-default);
+}
+
+.informer__content,
+.informer__action {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.informer__content_distribute_default,
+.informer__action_distribute_default {
+  justify-content: flex-start;
+}
+
+.informer__content_distribute_between,
+.informer__action_distribute_between {
+  justify-content: space-between;
+}
+
+.informer__content_distribute_center,
+.informer__action_distribute_center {
+  justify-content: center;
+}
+
+$elements: content, action;
+$values: xl, xxl;
+
+@each $element in $elements {
+  @each $value in $values {
+    @include space-a(informer__#{$element}, $value);
+  }
+}

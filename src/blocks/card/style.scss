@@ -1,0 +1,70 @@
+@import '../../helpers/spaces/style';
+
+.card {
+  position: relative;
+}
+
+.card_border_all {
+  border: 3px solid var(--background-color-border);
+}
+
+.card_view_default {
+  background-color: var(--background-color-default);
+}
+
+.card__content {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__content_distribute_center {
+  justify-content: center;
+}
+
+.card__content_vertical-align_center {
+  align-items: center;
+}
+
+$content-space-values: m, l, xl, xxl, xxxl;
+
+@each $value in $content-space-values {
+  @include space-a(card__content, $value);
+}
+
+.card__footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__footer_distribute_between {
+  justify-content: space-between;
+}
+
+.card__footer_distribute_center {
+  justify-content: center;
+}
+
+.card__footer_distribute_right {
+  justify-content: flex-end;
+}
+
+.card__footer_vertical-align_center {
+  align-items: center;
+}
+
+.card__footer_vertical-align_top {
+  align-items: flex-start;
+}
+
+.card__footer_vertical-align_bottom {
+  align-items: flex-end;
+}
+
+$footer-space-values: m, l, xl, xxl;
+
+@each $value in $footer-space-values {
+  @include space-a(card__footer, $value);
+}

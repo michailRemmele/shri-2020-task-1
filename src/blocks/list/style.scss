@@ -1,0 +1,41 @@
+@import '../../helpers/spaces/style';
+
+.list_border_all {
+  border: 3px solid var(--background-color-border);
+}
+
+.list_view_default {
+  background-color: var(--background-color-default);
+}
+
+.list__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__item_border_bottom {
+  border-bottom: 3px solid var(--background-color-border);
+}
+
+.list__item_border_top {
+  border-top: 3px solid var(--background-color-border);
+}
+
+.list__item_distribute_between {
+  justify-content: space-between;
+}
+
+.list__item_vertical-align_center {
+  align-items: center;
+}
+
+@include indent-t(list__item, m);
+
+$indent-b-values: s, m, l, xl;
+
+@each $value in $indent-b-values {
+  @include indent-b(list__item, $value);
+}
+
+@include space-b(list__item, s);
+@include space-a(list__item, m);
