@@ -46,3 +46,13 @@ $sizes: 2, 3, 4, 5, 8;
 @each $size in $sizes {
   @include fraction_m-col($size);
 }
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid__fraction {
+    grid-column-end: span 1;
+  }
+}
