@@ -36,6 +36,10 @@ $values: xxxs, xxs, s, m, l, xl, xxl, xxxl, xxxxl;
   @include space-v(form__item, $value);
 }
 
+.form__control {
+  flex-grow: 1;
+}
+
 .form__label_width_default {
   width: 35%;
 }
