@@ -1,5 +1,11 @@
 @import '../../helpers/spaces/style';
 
+.section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color-default);
+}
+
 @include indent-b(section, xxl);
 @include indent-b(section, xxxxl);
 @include space-v(section, xxl);
