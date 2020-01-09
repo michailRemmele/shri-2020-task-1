@@ -1,0 +1,26 @@
+.history {
+  border-width: 3px;
+}
+
+.history__transaction:last-child {
+  border-bottom: none;
+}
+
+.history__show {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.history__show.list__item {
+  margin-top: 0;
+}
+
+.history__details {
+  display: flex;
+  align-items: center;
+}
+
+.history__actions.list__item {
+  margin-bottom: 0;
+}
