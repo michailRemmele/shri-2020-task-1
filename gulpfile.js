@@ -4,10 +4,15 @@ const sass = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify-es').default;
 const argv = require('yargs').argv;
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const browserify = require('browserify');
 
 const path = {
-  css: './src/**/*.scss',
+  src: './src/',
+  jsEntry: './src/index.js',
   js: './src/**/*.js',
+  css: './src/**/*.scss',
   build: './build/',
   watch: './build/**',
 };
@@ -23,9 +28,15 @@ function styles() {
 }
 
 function scripts() {
-  return gulp.src(path.js)
+  const b = browserify({
+    entries: path.jsEntry,
+    debug: true,
+  });
+
+  return b.bundle()
+    .pipe(source('script.js'))
+    .pipe(buffer())
     .pipe(uglify())
-    .pipe(concat('script.js'))
     .pipe(gulp.dest(dest));
 }
 

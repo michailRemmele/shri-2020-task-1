@@ -1,3 +1,5 @@
+const clickHandler = require('../../../helpers/clickHandler');
+
 const switchClassName = 'onoffswitch';
 const switchCheckedClassName = 'onoffswitch_checked';
 const themeDefaultClassName = 'theme_color_project-default';
@@ -16,23 +18,4 @@ function onSwitchClick(event, target) {
   });
 }
 
-function processClick(event, selector, fn) {
-  if (event.target.matches(selector)) {
-    fn(event, event.target);
-  }
-
-  let element = event.target.parentElement;
-
-  while (element !== null) {
-    if (element.matches(selector)) {
-      fn(event, element);
-      break;
-    }
-
-    element = element.parentElement;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.addEventListener('click', (event) => processClick(event, switchSelector, onSwitchClick), true);
-});
+clickHandler.onClick(switchSelector, onSwitchClick);

@@ -1,3 +1,5 @@
+const clickHandler = require('../../../helpers/clickHandler');
+
 const accordionClassName = 'e-accordion';
 const accordionExpandedClassName = `${accordionClassName}__more_expanded`;
 
@@ -12,23 +14,4 @@ function onAccordionClick(event, target) {
   accordionMore.classList.toggle(accordionExpandedClassName);
 }
 
-function processClick(event, selector, fn) {
-  if (event.target.matches(selector)) {
-    fn(event, event.target);
-  }
-
-  let element = event.target.parentElement;
-
-  while (element !== null) {
-    if (element.matches(selector)) {
-      fn(event, element);
-      break;
-    }
-
-    element = element.parentElement;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.addEventListener('click', (event) => processClick(event, accordionShortSelector, onAccordionClick), true);
-});
+clickHandler.onClick(accordionShortSelector, onAccordionClick);
