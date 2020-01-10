@@ -1,5 +1,11 @@
 @import '../../../helpers/spaces/style';
 
+.informer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .informer_border_all {
   border: 3px solid var(--background-color-border);
 }
