@@ -80,7 +80,7 @@ body {
   --gap: var(--space-xl);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .theme_gap_small {
     --gap: var(--space-s);
   }
