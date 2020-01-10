@@ -1,11 +1,12 @@
-const accordionSelector = '.e-accordion';
+const accordionClassName = 'e-accordion';
+const accordionExpandedClassName = `${accordionClassName}__more_expanded`;
+
+const accordionSelector = `.${accordionClassName}`;
 const accordionShortSelector = `${accordionSelector}__short`;
 const accordionMoreSelector = `${accordionSelector}__more`;
 
-const accordionExpandedClassName = 'e-accordion__more_expanded';
-
-function onAccordionClick(event) {
-  const accordion = event.target.closest(accordionSelector);
+function onAccordionClick(event, target) {
+  const accordion = target.closest(accordionSelector);
   const accordionMore = accordion.querySelectorAll(accordionMoreSelector)[0];
 
   accordionMore.classList.toggle(accordionExpandedClassName);
@@ -13,14 +14,14 @@ function onAccordionClick(event) {
 
 function processClick(event, selector, fn) {
   if (event.target.matches(selector)) {
-    fn(event);
+    fn(event, event.target);
   }
 
   let element = event.target.parentElement;
 
   while (element !== null) {
     if (element.matches(selector)) {
-      fn(event);
+      fn(event, element);
       break;
     }
 
@@ -28,4 +29,6 @@ function processClick(event, selector, fn) {
   }
 }
 
-document.body.addEventListener('click', (event) => processClick(event, accordionShortSelector, onAccordionClick), true);
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', (event) => processClick(event, accordionShortSelector, onAccordionClick), true);
+});
