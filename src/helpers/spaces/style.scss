@@ -1,0 +1,101 @@
+$types: (space: padding, indent: margin);
+
+@mixin _space-t($element-name, $type, $value) {
+  .#{$element-name}_#{$type}-t_#{$value} {
+    #{map-get($types, $type)}-top: var(--space-#{$value});
+  }
+}
+
+@mixin _space-r($element-name, $type, $value) {
+  .#{$element-name}_#{$type}-r_#{$value} {
+    #{map-get($types, $type)}-right: var(--space-#{$value});
+  }
+}
+
+@mixin _space-b($element-name, $type, $value) {
+  .#{$element-name}_#{$type}-b_#{$value} {
+    #{map-get($types, $type)}-bottom: var(--space-#{$value});
+  }
+}
+
+@mixin _space-l($element-name, $type, $value) {
+  .#{$element-name}_#{$type}-l_#{$value} {
+    #{map-get($types, $type)}-left: var(--space-#{$value});
+  }
+}
+
+@mixin _space-h($element-name, $type, $value) {
+  .#{$element-name}_#{$type}-h_#{$value} {
+    #{map-get($types, $type)}-left: var(--space-#{$value});
+    #{map-get($types, $type)}-right: var(--space-#{$value});
+  }
+}
+
+@mixin _space-v($element-name, $type, $value) {
+  .#{$element-name}_#{$type}-v_#{$value} {
+    #{map-get($types, $type)}-top: var(--space-#{$value});
+    #{map-get($types, $type)}-bottom: var(--space-#{$value});
+  }
+}
+
+@mixin _space-a($element-name, $type, $value) {
+  .#{$element-name}_#{$type}-a_#{$value} {
+    #{map-get($types, $type)}: var(--space-#{$value});
+  }
+}
+
+@mixin space-t($element-name, $value) {
+  @include _space-t($element-name, space, $value);
+}
+
+@mixin space-r($element-name, $value) {
+  @include _space-r($element-name, space, $value);
+}
+
+@mixin space-b($element-name, $value) {
+  @include _space-b($element-name, space, $value);
+}
+
+@mixin space-l($element-name, $value) {
+  @include _space-l($element-name, space, $value);
+}
+
+@mixin space-h($element-name, $value) {
+  @include _space-h($element-name, space, $value);
+}
+
+@mixin space-v($element-name, $value) {
+  @include _space-v($element-name, space, $value);
+}
+
+@mixin space-a($element-name, $value) {
+  @include _space-a($element-name, space, $value);
+}
+
+@mixin indent-t($element-name, $value) {
+  @include _space-t($element-name, indent, $value);
+}
+
+@mixin indent-r($element-name, $value) {
+  @include _space-r($element-name, indent, $value);
+}
+
+@mixin indent-b($element-name, $value) {
+  @include _space-b($element-name, indent, $value);
+}
+
+@mixin indent-l($element-name, $value) {
+  @include _space-l($element-name, indent, $value);
+}
+
+@mixin indent-h($element-name, $value) {
+  @include _space-h($element-name, indent, $value);
+}
+
+@mixin indent-v($element-name, $value) {
+  @include _space-v($element-name, indent, $value);
+}
+
+@mixin indent-a($element-name, $value) {
+  @include _space-a($element-name, indent, $value);
+}

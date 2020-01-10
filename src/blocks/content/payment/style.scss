@@ -1,0 +1,16 @@
+.payment {
+  border-width: 3px;
+}
+
+.payment__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment__content .form__item:last-child {
+  margin-bottom: 0;
+}
+
+.payment__footer .form__control {
+  flex-grow: 0;
+}

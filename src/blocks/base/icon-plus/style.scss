@@ -1,0 +1,13 @@
+@import '../../../helpers/spaces/style';
+
+.icon-plus {
+  display: flex;
+}
+
+.icon-plus_vertical-align_center {
+  align-items: center;
+}
+
+@include indent-r(icon-plus__icon, s);
+@include indent-r(icon-plus__icon, m);
+@include indent-l(icon-plus__icon, l);

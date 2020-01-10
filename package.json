@@ -1,0 +1,57 @@
+{
+  "name": "shri-2020-task-1",
+  "version": "1.0.0",
+  "description": "Implementation of Yandex SHRI 2020 design system for task 1",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "lint:js": "eslint src/**",
+    "lint:css": "stylelint src/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michailRemmele/shri-2020-task-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michailRemmele/shri-2020-task-1/issues"
+  },
+  "homepage": "https://github.com/michailRemmele/shri-2020-task-1#readme",
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify-es": "^2.0.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.13.0",
+    "stylelint": "^12.0.1",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-scss": "^3.13.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "yargs": "^15.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --max-warnings=0 --fix",
+      "git add"
+    ],
+    "src/**/*.css": [
+      "stylelint --max-warnings=0 --fix",
+      "git add"
+    ]
+  }
+}

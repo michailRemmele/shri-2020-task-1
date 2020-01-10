@@ -1,0 +1,25 @@
+.product {
+  --product-image-border-color: var(--background-color-border);
+
+  min-height: 300px;
+  border-width: 3px;
+}
+
+.product__image {
+  width: 100%;
+  height: 160px;
+}
+
+.product__image .image {
+  height: 100%;
+  border-color: var(--product-image-border-color);
+}
+
+.product__footer .text {
+  width: 100%;
+}
+
+.product__title {
+  width: 100%;
+  margin-bottom: var(--space-xxxl);
+}
